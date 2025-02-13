@@ -9,11 +9,13 @@ TagManager:
   - Walls
   - NPC
   - Waypoint
+  - Flocker
+  - WayPoints
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
