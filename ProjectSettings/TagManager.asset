@@ -11,6 +11,8 @@ TagManager:
   - Waypoint
   - Flocker
   - WayPoints
+  - Item
+  - Litter
   layers:
   - Default
   - TransparentFX
