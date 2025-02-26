@@ -13,7 +13,7 @@ public class SpawnItems : MonoBehaviour
     public GameObject itemPrefab, waypointsPrefab; // Reference to item prefab
 	public GameObject groundObject;
     [SerializeField] int numberOfItems = 5;
-    [SerializeField] List<GameObject> items = new List<GameObject>();
+    public List<GameObject> items = new List<GameObject>();
 
     [SerializeField] int numberWaypoints = 4;
     [SerializeField] List<GameObject> waypoints = new List<GameObject>();
@@ -23,6 +23,7 @@ public class SpawnItems : MonoBehaviour
     [SerializeField] public NavMeshSurface surface;
     [SerializeField] private float raycastHeight = 50f; // Height above the plane from which to cast rays.
 
+    [SerializeField] private GameObject spawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
