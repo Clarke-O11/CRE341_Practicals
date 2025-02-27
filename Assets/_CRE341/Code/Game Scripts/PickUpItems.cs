@@ -15,6 +15,9 @@ public class PickUpItems : MonoBehaviour
     public GameObject spawnerObject;
     [SerializeField] List<GameObject> items = new List<GameObject>();
 
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private LayerMask pickUpLayer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +39,7 @@ public class PickUpItems : MonoBehaviour
         if (numberOfItems == maxItems) 
         { 
             //Empty items into bin
+            //Check if player is at a bin
             
         }
 
@@ -45,7 +49,11 @@ public class PickUpItems : MonoBehaviour
 
     private void PickUp() 
     {
-        items.Add(itemSpawner.itemPrefab);
-        itemSpawner.items.Remove(itemSpawner.itemPrefab);
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickUpRange)) 
+        {
+            items.Add(itemSpawner.itemPrefab);
+            itemSpawner.items.Remove(itemSpawner.itemPrefab);
+            Debug.Log(gameObject.name + " detected");
+        }
     }
 }
