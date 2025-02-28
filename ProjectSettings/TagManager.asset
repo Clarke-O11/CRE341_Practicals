@@ -12,7 +12,7 @@ TagManager:
   - Flocker
   - WayPoints
   - Item
-  - Litter
+  - Interactable
   layers:
   - Default
   - TransparentFX

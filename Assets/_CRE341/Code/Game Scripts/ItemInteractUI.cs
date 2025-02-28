@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening.Core.Easing;
 
 public class ItemInteractUI : MonoBehaviour
 {
