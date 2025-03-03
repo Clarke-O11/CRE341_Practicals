@@ -13,7 +13,7 @@ public class PickUpItems : MonoBehaviour
     public int maxItems = 10;     //max litter player can hold
 
     public GameObject spawnerObject;
-    [SerializeField] List<GameObject> items = new List<GameObject>();
+    public List<GameObject> items = new List<GameObject>();
 
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private LayerMask pickUpLayer;
