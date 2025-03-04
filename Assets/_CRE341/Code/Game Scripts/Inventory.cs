@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 {
     //private string itemName;
     private int itemAmount;
+    private int itemMax;
     //public Image itemIcon;
 
     private PickUpItems pickUpItems;
@@ -28,10 +29,15 @@ public class Inventory : MonoBehaviour
     void InventoryDisplay() 
     {
         itemAmount = pickUpItems.numberOfItems;
+        itemMax = pickUpItems.maxItems;
         itemAmountDisplay.text = itemAmount.ToString();
-        if (itemAmount == pickUpItems.maxItems) 
-        { 
+        if (itemAmount == itemMax)
+        {
             itemAmountDisplay.color = Color.red;
+        }
+        else
+        { 
+            itemAmountDisplay.color = Color.white;
         }
     }
 

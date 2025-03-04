@@ -18,6 +18,8 @@ public class PickUpItems : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private LayerMask pickUpLayer;
 
+    public GameObject item;
+
     // Update is called once per frame
     void Update()
     {
@@ -45,8 +47,8 @@ public class PickUpItems : MonoBehaviour
     {
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickUpRange)) 
         {
-            itemInv.Add(itemSpawner.itemPrefab);
-            itemSpawner.items.Remove(itemSpawner.itemPrefab);
+            itemInv.Add(item);
+            //itemSpawner.items.Remove(itemSpawner.itemPrefab);
             Debug.Log(gameObject.name + " detected");
         }
     }
