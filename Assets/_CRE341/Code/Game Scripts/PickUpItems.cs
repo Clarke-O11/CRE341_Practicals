@@ -13,21 +13,15 @@ public class PickUpItems : MonoBehaviour
     public int maxItems = 10;     //max litter player can hold
 
     public GameObject spawnerObject;
-    public List<GameObject> items = new List<GameObject>();
+    public List<GameObject> itemInv = new List<GameObject>();
 
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private LayerMask pickUpLayer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        numberOfItems = items.Count;
+        numberOfItems = itemInv.Count;
 
         //Check if player is in raneg and if 'E' is pressed
         Vector3 distanceToPlayer = player.position - transform.position;
@@ -36,12 +30,12 @@ public class PickUpItems : MonoBehaviour
             PickUp();
         }
 
-        if (numberOfItems == maxItems) 
+        /*if (numberOfItems == maxItems) 
         { 
             //Empty items into bin
             //Check if player is at a bin
             
-        }
+        }*/
 
         // Inventory UI Display
         //itemDisplay.text = numberOfItems.ToString() + itemImage;
@@ -51,7 +45,7 @@ public class PickUpItems : MonoBehaviour
     {
         if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickUpRange)) 
         {
-            items.Add(itemSpawner.itemPrefab);
+            itemInv.Add(itemSpawner.itemPrefab);
             itemSpawner.items.Remove(itemSpawner.itemPrefab);
             Debug.Log(gameObject.name + " detected");
         }
