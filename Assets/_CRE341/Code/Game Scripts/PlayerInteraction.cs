@@ -5,6 +5,13 @@ public class PlayerInteraction : MonoBehaviour
     public float playerReach = 3f;
     Interactable currentInteractable;
 
+    private Inventory inventory;
+
+    private void Start()
+    {
+        inventory = GetComponent<Inventory>();      
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -12,6 +19,12 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
             currentInteractable.Interact();
+            inventory.AddItem();
+            //inventory.EmptyInventory();
+        }
+        else if (Input.GetKeyDown(KeyCode.Q) && currentInteractable != null)
+        {
+            inventory.EmptyInventory();
         }
     }
 

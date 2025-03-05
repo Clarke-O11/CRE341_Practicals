@@ -919,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &608855786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2938,7 +2938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1506564794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2989,7 +2989,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559428518}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c6a9a28bd1cf74d8623f947ec67429, type: 3}
   m_Name: 
@@ -3032,6 +3032,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemAmountDisplay: {fileID: 1560768424}
+  itemSpawner: {fileID: 608855786}
+  player: {fileID: 1313956646}
+  itemT: {fileID: 4293894510466103278, guid: 8140a4974dbf01449b58593fded19d35, type: 3}
+  pickUpRange: 4
+  numberOfItems: 0
+  maxItems: 10
+  spawnerObject: {fileID: 608855785}
+  itemInv: []
+  cameraTransform: {fileID: 7288094137546172436}
+  pickUpLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  itemPrefab: {fileID: 3283999851809008639, guid: 8140a4974dbf01449b58593fded19d35, type: 3}
 --- !u!1 &1560768422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,7 +3298,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 1244528808271462, guid: 0b50edd1ab1ea9c4ba8edc42f1b15181, type: 3}
   waypointsPrefab: {fileID: 8560873365045129249, guid: 60359ab39d3ed3f42ab598c7b21b9ebd, type: 3}
   groundObject: {fileID: 631091595}
-  numberOfItems: 10
+  numberOfItems: 5
   items: []
   numberWaypoints: 4
   waypoints: []

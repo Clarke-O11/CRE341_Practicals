@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63d248e2895b6942851f596e4844d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Trash Bin
+  message: '[Q] Put in Trash Bin'
   onInteraction:
     m_PersistentCalls:
       m_Calls:
