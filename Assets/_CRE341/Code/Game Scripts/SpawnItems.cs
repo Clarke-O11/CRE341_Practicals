@@ -37,7 +37,7 @@ public class SpawnItems : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            GameObject[] go_items = GameObject.FindGameObjectsWithTag("Items");
+            GameObject[] go_items = GameObject.FindGameObjectsWithTag("Interactable");
             foreach (GameObject item in go_items) Destroy(item);
             ItemSpawner(numberOfItems);
 

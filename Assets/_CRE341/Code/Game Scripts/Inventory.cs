@@ -42,8 +42,8 @@ public class Inventory : MonoBehaviour
         InventoryDisplay();
 
         if (numberOfItems > maxItems) 
-        { 
-            numberOfItems = maxItems    
+        {
+            numberOfItems = maxItems;    
         }
     }
 
