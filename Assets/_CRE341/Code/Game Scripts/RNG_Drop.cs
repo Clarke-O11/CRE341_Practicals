@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class RNG_Drop : MonoBehaviour
@@ -6,6 +7,8 @@ public class RNG_Drop : MonoBehaviour
     public int dropChance;
 
     private Droppable droppable;
+
+    private SpawnItems spawns;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,10 +24,12 @@ public class RNG_Drop : MonoBehaviour
 
     void ItemDropped() 
     { 
-        int randomNumber = Random.Range(0, 101); //1-100
+        int randomNumber = UnityEngine.Random.Range(0, 101); //1-100
         if (randomNumber <= dropChance) 
         {
             this.droppable.Drop();
+            spawns.items.Add(itemDropped);
+            Console.WriteLine($"{itemDropped} was dropped by NPC");
         }
     }
 }
