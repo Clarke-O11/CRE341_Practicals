@@ -24,7 +24,7 @@ public class RNG_Drop : MonoBehaviour
     void Update()
     {
         randomNumber = UnityEngine.Random.Range(0, 101); //1-100
-        randomTimer = UnityEngine.Random.Range(9, 61); //10-60
+        randomTimer = UnityEngine.Random.Range(19, 60); //10-60
         if (randomNumber <= dropChance && spawning == false) 
         { 
             StartCoroutine(ItemDropped());
@@ -34,7 +34,7 @@ public class RNG_Drop : MonoBehaviour
     public IEnumerator ItemDropped() 
     { 
         //if (randomNumber <= dropChance) 
-        Instantiate(itemDropped, itemDropped.transform.position, Quaternion.identity);
+        Instantiate(itemDropped, this.transform.position, Quaternion.identity);
         spawning = true;
         yield return new WaitForSeconds(randomTimer);
         spawning = false;
