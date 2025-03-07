@@ -1,35 +1,42 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RNG_Drop : MonoBehaviour
 {
     public GameObject itemDropped;
     public int dropChance;
 
-    private Droppable droppable;
+    int randomNumber;
+    int randomTimer;
 
-    private SpawnItems spawns;
+    bool spawning = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        //randomNumber = UnityEngine.Random.Range(0, 101); //1-100
+        //randomTimer = UnityEngine.Random.Range(0, 11); //10-20, 10-100
     }
 
     // Update is called once per frame
     void Update()
     {
-        ItemDropped();
+        randomNumber = UnityEngine.Random.Range(0, 101); //1-100
+        randomTimer = UnityEngine.Random.Range(9, 61); //10-60
+        if (randomNumber <= dropChance && spawning == false) 
+        { 
+            StartCoroutine(ItemDropped());
+        }       
     }
 
-    void ItemDropped() 
+    public IEnumerator ItemDropped() 
     { 
-        int randomNumber = UnityEngine.Random.Range(0, 101); //1-100
-        if (randomNumber <= dropChance) 
-        {
-            this.droppable.Drop();
-            spawns.items.Add(itemDropped);
-            Console.WriteLine($"{itemDropped} was dropped by NPC");
-        }
+        //if (randomNumber <= dropChance) 
+        Instantiate(itemDropped, itemDropped.transform.position, Quaternion.identity);
+        spawning = true;
+        yield return new WaitForSeconds(randomTimer);
+        spawning = false;
     }
 }
