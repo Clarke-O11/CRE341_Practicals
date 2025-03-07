@@ -75,7 +75,7 @@ public class Inventory : MonoBehaviour
 
     public void EmptyInventory() 
     {
-        if (numberOfItems >= maxItems) 
+        if (numberOfItems <= maxItems) 
         {
             numberOfItems = 0;
             canPickup = false;
