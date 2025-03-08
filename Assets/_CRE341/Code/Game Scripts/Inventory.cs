@@ -67,7 +67,8 @@ public class Inventory : MonoBehaviour
         if(canPickup == true) 
         { 
             numberOfItems = numberOfItems + 1;
-            Debug.Log(gameObject.name + " detected");
+            itemInv.Add(itemPrefab);
+            //Debug.Log(gameObject.name + " detected");
             Console.WriteLine($"Added: {itemPrefab} to inventory"); 
         }
          
