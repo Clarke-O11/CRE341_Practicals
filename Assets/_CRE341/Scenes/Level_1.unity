@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 320919902}
   - component: {fileID: 320919904}
   - component: {fileID: 320919905}
+  - component: {fileID: 320919906}
   m_Layer: 7
   m_Name: NPC_00
   m_TagString: NPC
@@ -500,6 +501,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDropped: {fileID: 3283999851809008639, guid: 704fcafcde1f58e4d8d19794a1816142, type: 3}
   dropChance: 80
+--- !u!114 &320919906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320919900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413bda9d908c5df4494df59243e07eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &342239443
 GameObject:
   m_ObjectHideFlags: 0

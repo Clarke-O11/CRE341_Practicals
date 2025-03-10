@@ -80,7 +80,7 @@ public class MapGenerator : MonoBehaviour {
 			SmoothMap();
 		}
 
-		ProcessMap ();
+		// ProcessMap (); TODO: Removed for AI Testing in ai_test_scene
 
 		int borderSize = 1;
 		int[,] borderedMap = new int[width + borderSize * 2,height + borderSize * 2];
@@ -459,8 +459,8 @@ public class MapGenerator : MonoBehaviour {
 	private void PlacePlayer()
     {
         Vector3 randomPlayerPos = GetRandomGroundPoint();
-
-		player.transform.position = randomPlayerPos;
+		UnityEngine.Object.Instantiate(player, randomPlayerPos, Quaternion.identity);
+		//player.transform.position = randomPlayerPos;
     }
 	
     // Call this method to obtain a random point on an object tagged "Ground".
@@ -502,7 +502,7 @@ public class MapGenerator : MonoBehaviour {
 			while (!validPositionFound && attempts < maxAttempts)
 			{
 				randomNPCPos = GetRandomGroundPoint();
-				if (randomNPCPos != Vector3.zero)
+                if (randomNPCPos != Vector3.zero)
 				{
 					NavMeshHit hit;
 					if (NavMesh.SamplePosition(randomNPCPos, out hit, 1.0f, NavMesh.AllAreas))
@@ -516,7 +516,8 @@ public class MapGenerator : MonoBehaviour {
 
 			if (validPositionFound)
 			{
-				Instantiate(npcPrefab, randomNPCPos, Quaternion.identity);
+                randomNPCPos.y = 2.0f; // Spawn NPS 5 above mesh
+                Instantiate(npcPrefab, randomNPCPos, Quaternion.identity);
 				// add the NPC to the list
 				npcs.Add(npcPrefab);
 			}
