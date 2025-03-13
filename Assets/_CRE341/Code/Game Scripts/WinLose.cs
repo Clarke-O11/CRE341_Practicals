@@ -22,13 +22,25 @@ public class WinLose : MonoBehaviour
 
     void WinStatus() 
     { 
-        if (inv.itemInv.Count >= minItems && timer.hasLimit == true) 
+        if (timer.timeFinished == true) 
+        {
+            if (inv.itemInv.Count >= minItems) 
+            { 
+                SceneManager.LoadScene("WinScreen");
+            }
+            else
+            {
+                SceneManager.LoadScene("LoseScreen");
+            }
+        }
+
+        /*if (inv.itemInv.Count >= minItems && timer.timeFinished == true) 
         {
             SceneManager.LoadScene("WinScreen");
         }
-        else if (inv.itemInv.Count < minItems && timer.hasLimit == true) 
+        else if (inv.itemInv.Count < minItems && timer.timeFinished == true) 
         {
             SceneManager.LoadScene("LoseScreen");
-        }
+        }*/
     }
 }

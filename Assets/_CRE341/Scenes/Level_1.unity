@@ -2512,6 +2512,7 @@ MonoBehaviour:
   countdown: 1
   hasLimit: 0
   maxTime: 0
+  timeFinished: 0
 --- !u!4 &1112899144
 Transform:
   m_ObjectHideFlags: 0
@@ -2803,9 +2804,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1422919238}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1571807527175990118, guid: 2e1a41d7362b3dd45bc95871553172dc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1559428520}
     - targetCorrespondingSourceObject: {fileID: 1571807527175990118, guid: 2e1a41d7362b3dd45bc95871553172dc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1559428521}
@@ -3196,30 +3194,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1571807527175990118, guid: 2e1a41d7362b3dd45bc95871553172dc, type: 3}
   m_PrefabInstance: {fileID: 1313956645}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1559428520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559428518}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c6a9a28bd1cf74d8623f947ec67429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSpawner: {fileID: 608855786}
-  player: {fileID: 1313956646}
-  pickUpRange: 4
-  numberOfItems: 0
-  maxItems: 10
-  spawnerObject: {fileID: 608855785}
-  itemInv: []
-  cameraTransform: {fileID: 7288094137546172436}
-  pickUpLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  item: {fileID: 3283999851809008639, guid: 8140a4974dbf01449b58593fded19d35, type: 3}
 --- !u!114 &1559428521
 MonoBehaviour:
   m_ObjectHideFlags: 0

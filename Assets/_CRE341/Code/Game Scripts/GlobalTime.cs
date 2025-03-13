@@ -11,16 +11,37 @@ public class GlobalTime : MonoBehaviour
     public bool countdown; // is timer counting down
 
     public bool hasLimit;
-    public float maxTime; // time limit
+    public float maxTime = 0; // time limit
+
+    public bool timeFinished;
 
     // Update is called once per frame
     void Update()
     {
-        currentTime = countdown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
+        SetTimerText();
+        Timer();
+    }
 
-        if (currentTime == maxTime)
+    private void SetTimerText() 
+    {
+        timerText.text = currentTime.ToString("0.0");
+    }
+
+    private void Timer() 
+    {
+        //currentTime = countdown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
+
+        if (currentTime <= 0.01f)
         {
+            timeFinished = true;
             hasLimit = true;
+            Debug.Log("TIME'S UP");
+        }
+
+        if (!timeFinished)
+        {
+            currentTime = countdown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
+            hasLimit = false;
         }
 
         if (hasLimit && ((countdown && currentTime <= maxTime) || (countdown && currentTime >= maxTime)))
@@ -30,13 +51,6 @@ public class GlobalTime : MonoBehaviour
             timerText.color = Color.red;
             enabled = false;
         }
-
-        SetTimerText();
-    } 
-
-    private void SetTimerText() 
-    {
-        timerText.text = currentTime.ToString("0.0");
     }
 
 }
