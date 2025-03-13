@@ -18,7 +18,12 @@ public class GlobalTime : MonoBehaviour
     {
         currentTime = countdown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
 
-        if(hasLimit && ((countdown && currentTime <= maxTime) || (countdown && currentTime >= maxTime)))
+        if (currentTime == maxTime)
+        {
+            hasLimit = true;
+        }
+
+        if (hasLimit && ((countdown && currentTime <= maxTime) || (countdown && currentTime >= maxTime)))
         {
             currentTime = maxTime;
             SetTimerText();

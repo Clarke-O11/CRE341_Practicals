@@ -5,6 +5,10 @@ public class Top_FSM_Chase : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameObject NPC_00 = GameObject.Find("NPC_00");
+        if (NPC_00 == null)
+        {
+            NPC_00 = GameObject.Find("NPC_00(Clone)");
+        }
         // get AIState_Patrol child in NPC_000
         GameObject AIState_Chase = NPC_00.transform.Find("AIState_Chase").gameObject;
         // access animator component of AIState_Patrol

@@ -22,7 +22,7 @@ public class WinLose : MonoBehaviour
 
     void WinStatus() 
     { 
-        if (inv.itemInv.Count >= minItems && timer.hasLimit == false) 
+        if (inv.itemInv.Count >= minItems && timer.hasLimit == true) 
         {
             SceneManager.LoadScene("WinScreen");
         }

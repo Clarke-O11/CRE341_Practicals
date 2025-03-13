@@ -31,6 +31,11 @@ public class AI_FSM : MonoBehaviour
         // set initial player distance to infinity
         distanceToPlayer = Mathf.Infinity;
         fsm_anim = GetComponent<Animator>();
+        player = GameObject.Find("Player");
+        if (player == null)
+        {
+            Debug.LogError("ERROR!");
+        }
     }
 
     // Update is called once per frame

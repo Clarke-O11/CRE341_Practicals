@@ -23,6 +23,10 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
 
         NPC_00 = GameObject.Find("NPC_00");
+        if (NPC_00 == null)
+        {
+            NPC_00 = GameObject.Find("NPC_00(Clone)");
+        }
         NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
     }
 
