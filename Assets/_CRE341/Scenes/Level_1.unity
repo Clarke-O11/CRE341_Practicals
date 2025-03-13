@@ -851,7 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1559428518}
-  npcPrefab: {fileID: 320919900}
+  npcPrefab: {fileID: 3628545954237388218, guid: 9cd97f6f36f4728469d9266a56f839e0, type: 3}
   waypointsPrefab: {fileID: 8560873365045129249, guid: 60359ab39d3ed3f42ab598c7b21b9ebd, type: 3}
   groundObject: {fileID: 631091595}
   width: 128
@@ -1550,9 +1550,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.33333334
+  m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 4267569a004ea11448fa13218b78f2cb, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &797153121
 Transform:

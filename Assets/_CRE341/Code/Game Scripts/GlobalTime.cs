@@ -17,6 +17,7 @@ public class GlobalTime : MonoBehaviour
     void Update()
     {
         currentTime = countdown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
+
         if(hasLimit && ((countdown && currentTime <= maxTime) || (countdown && currentTime >= maxTime)))
         {
             currentTime = maxTime;
