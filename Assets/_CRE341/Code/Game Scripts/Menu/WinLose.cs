@@ -22,7 +22,7 @@ public class WinLose : MonoBehaviour
 
     void WinStatus() 
     { 
-        if (timer.timeFinished == true) 
+        if (timer.timeFinished) 
         {
             if (inv.itemInv.Count >= minItems) 
             { 

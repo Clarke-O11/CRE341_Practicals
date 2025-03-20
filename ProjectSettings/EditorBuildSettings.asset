@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_CRE341/Scenes/MenuScreen.unity
     guid: 59d4a9ac25f4a7f499b19e0268ce1cdc
+  - enabled: 1
+    path: Assets/_CRE341/Scenes/Level_1.unity
+    guid: a3dc9c669c4b8b2479ef81607e304c8a
+  - enabled: 1
+    path: Assets/_CRE341/Scenes/LoseScreen.unity
+    guid: 324a9bf65532b7c4286150941d992aec
+  - enabled: 1
+    path: Assets/_CRE341/Scenes/WinScreen.unity
+    guid: a128eb6ae4f8f384a947b5e7824b14f4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
