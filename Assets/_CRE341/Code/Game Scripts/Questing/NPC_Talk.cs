@@ -19,8 +19,8 @@ public class NPC_Talk : MonoBehaviour
 
     Inventory inventory;
 
-    public void StartConversation() 
-    { 
+    public void StartConversation()
+    {
         isTalking = true;
         LookAtPlayer();
 
@@ -32,13 +32,12 @@ public class NPC_Talk : MonoBehaviour
             currentDialogue = 0;
             questGiver.StartQuest();
         }
-        else 
+        else
         {   // quest in progress
             if (currentActiveQuest.isCompleted == false && currentActiveQuest.isActive == true)
-            { 
-                if (AreQuestRequirementsCompleted()) 
+            {
+                if (AreQuestRequirementsCompleted())
                 {
-                    //SubmitRequiredItems();
                     questGiver.questUI.SetActive(false);
                     //dialogueText.text = currentActiveQuest.info.questCompleted;
                     isTalking = false;
@@ -46,7 +45,7 @@ public class NPC_Talk : MonoBehaviour
             }
         }
 
-        if (currentActiveQuest.isCompleted) 
+        if (currentActiveQuest.isCompleted)
         {
             dialogueText.text = currentActiveQuest.info.questCompleted;
             isTalking = false;

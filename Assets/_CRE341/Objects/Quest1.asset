@@ -20,13 +20,12 @@ MonoBehaviour:
     NPC: or metal detection
     or something?
 
-    YOU: Actually, I''m not that kind of Robot, ma''am.
+    YOU: Actually, I''m not that kind of Robot.
 
-    NPC:
-    Then what kind of Robot are you?
+    NPC: Then
+    what kind of Robot are you?
 
-    YOU: I was assigned to keep this park clean
-    and tidy.'
+    YOU: I was assigned to keep this park clean.'
   - 'NPC: Ah, you''re one of those.
 
     NPC: Must be tough having to pick up after
@@ -35,9 +34,7 @@ MonoBehaviour:
     NPC: Anyway, if you see my phone come find me.
 
     NPC: I''ll
-    be around here somewhere.
-
-    YOU: (Humans are weird...)'
+    be around here somewhere.'
   questCompleted: 'NPC: Ohmigosh. You found it!
 
     NPC: I was about to listen to
@@ -49,9 +46,6 @@ MonoBehaviour:
     NPC: Have you heard of it? Y''know what
     nevermind.
 
-    NPC: Thanks again.
-
-    YOU: (Yet again, she proves my point.
-    How odd)'
+    NPC: Thanks again.'
   requiredItem: Phone
   requirementAmount: 1
