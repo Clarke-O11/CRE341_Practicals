@@ -17,7 +17,7 @@ public class Inventory : MonoBehaviour
     private List<Item> items;
 
     public SpawnItems itemSpawner;       //litter
-    //public GameObject specialItemPrefab;      //special NPC items
+
     public Transform player;
     public Transform itemT;
 
@@ -35,6 +35,11 @@ public class Inventory : MonoBehaviour
     [SerializeField] private LayerMask pickUpLayer;
 
     public GameObject itemPrefab;
+    public GameObject specialItemPrefab;      //special NPC items
+    ItemTypes itemTypes;
+
+    public bool hasRequiredItem;
+
 
     // Update is called once per frame
     void Update()
@@ -43,7 +48,7 @@ public class Inventory : MonoBehaviour
 
         if (numberOfItems > maxItems) 
         {
-            numberOfItems = maxItems;    
+            numberOfItems = maxItems;
         }
     }
 
@@ -64,14 +69,22 @@ public class Inventory : MonoBehaviour
 
     public void AddItem() 
     { 
-        if(canPickup == true) 
+        if(canPickup == true && gameObject.name == "Litter" || canPickup == true && gameObject.name == "Litter_Drop")
         { 
             numberOfItems = numberOfItems + 1;
             itemInv.Add(itemPrefab);
             //Debug.Log(gameObject.name + " detected");
             Console.WriteLine($"Added: {itemPrefab} to inventory"); 
         }
-         
+        if (itemTypes == ItemTypes.SpecialItem)
+        {
+            numberOfItems = numberOfItems + 1;
+            itemInv.Add(specialItemPrefab);
+            //Debug.Log(gameObject.name + " detected");
+            Console.WriteLine($"Added: {specialItemPrefab} to inventory");
+            hasRequiredItem = true;
+        }
+
     }
 
     public void EmptyInventory() 
@@ -83,4 +96,10 @@ public class Inventory : MonoBehaviour
         }
     }
 
+}
+
+public enum ItemTypes 
+{ 
+    Litter,
+    SpecialItem
 }

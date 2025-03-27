@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b520ebe4ae060479dcb5c4dba62bba, type: 3}
+  m_Name: Quest1
+  m_EditorClassIdentifier: 
+  initialDialogue:
+  - "NPC: Hey, you.\nNPC: You're a Robot right?\nNPC: Can you help me find something?\nNPC:
+    Can you track down my phone? \nNPC: I think I dropped it somewhere around here."
+  - 'NPC: Don''t you have some sort of tracking software...
+
+    NPC: or metal detection
+    or something?
+
+    YOU: Actually, I''m not that kind of Robot, ma''am.
+
+    NPC:
+    Then what kind of Robot are you?
+
+    YOU: I was assigned to keep this park clean
+    and tidy.'
+  - 'NPC: Ah, you''re one of those.
+
+    NPC: Must be tough having to pick up after
+    other people.
+
+    NPC: Anyway, if you see my phone come find me.
+
+    NPC: I''ll
+    be around here somewhere.
+
+    YOU: (Humans are weird...)'
+  questCompleted: 'NPC: Ohmigosh. You found it!
+
+    NPC: I was about to listen to
+    my favourite podcast when i realised it was gone.
+
+    NPC: It''s called "Your
+    Neighbour is Going to Kill You".
+
+    NPC: Have you heard of it? Y''know what
+    nevermind.
+
+    NPC: Thanks again.
+
+    YOU: (Yet again, she proves my point.
+    How odd)'
+  requiredItem: Phone
+  requirementAmount: 1

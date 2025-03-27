@@ -15,9 +15,6 @@ public class SpawnItems : MonoBehaviour
     [SerializeField] int numberOfItems = 5;
     public List<GameObject> items = new List<GameObject>();
 
-    [SerializeField] int numberWaypoints = 4;
-    [SerializeField] List<GameObject> waypoints = new List<GameObject>();
-
     [SerializeField] private int maxAttempts = 1000; // Safety limit to avoid an infinite loop.
 
     [SerializeField] public NavMeshSurface surface;
@@ -28,7 +25,6 @@ public class SpawnItems : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnWayPoints(numberWaypoints);
         ItemSpawner(numberOfItems);
     }
 
@@ -40,10 +36,6 @@ public class SpawnItems : MonoBehaviour
             GameObject[] go_items = GameObject.FindGameObjectsWithTag("Interactable");
             foreach (GameObject item in go_items) Destroy(item);
             ItemSpawner(numberOfItems);
-
-            GameObject[] go_wps = GameObject.FindGameObjectsWithTag("Waypoint");
-            foreach (GameObject wp in go_wps) Destroy(wp);
-            SpawnWayPoints(numberWaypoints);
         }
     }
 
@@ -107,43 +99,6 @@ public class SpawnItems : MonoBehaviour
             else
             {
                 Debug.LogWarning("Failed to find a valid NavMesh point for Item.");
-            }
-        }
-    }
-
-    private void SpawnWayPoints(int count)
-    {
-
-        for (int i = 0; i < count; i++)
-        {
-            Vector3 randomItemPos = Vector3.zero;
-            bool validPositionFound = false;
-            int attempts = 0;
-
-            while (!validPositionFound && attempts < maxAttempts)
-            {
-                randomItemPos = GetRandomGroundPoint();
-                if (randomItemPos != Vector3.zero)
-                {
-                    NavMeshHit hit;
-                    if (NavMesh.SamplePosition(randomItemPos, out hit, 1.0f, NavMesh.AllAreas))
-                    {
-                        randomItemPos = hit.position;
-                        validPositionFound = true;
-                    }
-                }
-                attempts++;
-            }
-
-            if (validPositionFound)
-            {
-                Instantiate(waypointsPrefab, randomItemPos, Quaternion.identity);
-                // add the Item to the list
-                waypoints.Add(waypointsPrefab);
-            }
-            else
-            {
-                Debug.LogWarning("Failed to find a valid NavMesh point for Waypoint.");
             }
         }
     }
