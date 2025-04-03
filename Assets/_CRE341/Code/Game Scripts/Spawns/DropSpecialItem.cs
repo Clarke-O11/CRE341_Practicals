@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class DropSpecialItem : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class DropSpecialItem : MonoBehaviour
     [SerializeField] private LayerMask interactableLayer;
 
     Interactable currentInteractable;
+    //public Image itemUI;
 
     // Update is called once per frame
     void Update()
@@ -67,6 +69,7 @@ public class DropSpecialItem : MonoBehaviour
                 returnedItem = true;
                 hasDroppedOnce = false;
                 playerHasItem.Remove(specialItemPrefab);
+                //itemUI.enabled = false;
             }
         }
     }
@@ -74,5 +77,6 @@ public class DropSpecialItem : MonoBehaviour
     private void PicksUpItem() 
     {
         playerHasItem.Add(requiredItem);
+        //itemUI.enabled = true;
     }
 }
