@@ -45,7 +45,7 @@ public class PickUpItems : MonoBehaviour
 
     private void PickUp() 
     {
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickUpRange)) 
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit raycastHit, pickUpRange, pickUpLayer)) 
         {
             itemInv.Add(item);
             //itemSpawner.items.Remove(itemSpawner.itemPrefab);

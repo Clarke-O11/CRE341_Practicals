@@ -10,7 +10,7 @@ using UnityEditor.ShaderGraph.Internal;
 public class SpawnItems : MonoBehaviour
 {
 
-    public GameObject itemPrefab, waypointsPrefab; // Reference to item prefab
+    public GameObject itemPrefab; // Reference to item prefab
 	public GameObject groundObject;
     [SerializeField] int numberOfItems = 5;
     public List<GameObject> items = new List<GameObject>();
