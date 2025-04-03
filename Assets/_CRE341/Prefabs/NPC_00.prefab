@@ -67,7 +67,7 @@ GameObject:
   - component: {fileID: 19108463821120713}
   - component: {fileID: 4564565137190093111}
   - component: {fileID: -8965160511464734696}
-  - component: {fileID: 5721687332678445471}
+  - component: {fileID: 1304408128410965533}
   m_Layer: 0
   m_Name: NPC_00
   m_TagString: NPC
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDropped: {fileID: 3283999851809008639, guid: 704fcafcde1f58e4d8d19794a1816142, type: 3}
   dropChance: 5
---- !u!114 &5721687332678445471
+--- !u!114 &1304408128410965533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,40 +183,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3628545954237388218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e4f8001f1d9e9419d064f984a13c62, type: 3}
+  m_Script: {fileID: 11500000, guid: 4211e09b2af81184c8f768421e1fa851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRange: 0
-  isTalking: 0
-  quests:
-    isActive: 0
-    title: 
-    description: 
-    goal:
-      goalType: 0
-      requiredAmount: 0
-      currentAmount: 0
-      requiredItem: {fileID: 0}
-      currentItem: {fileID: 0}
-    isCompleted: 0
-    initialDialogueCompleted: 0
-    info: {fileID: 11400000, guid: d4c683fcff5d76b48aaed390d66902c6, type: 2}
-  currentActiveQuest:
-    isActive: 0
-    title: 
-    description: 
-    goal:
-      goalType: 0
-      requiredAmount: 0
-      currentAmount: 0
-      requiredItem: {fileID: 0}
-      currentItem: {fileID: 0}
-    isCompleted: 0
-    initialDialogueCompleted: 0
-    info: {fileID: 0}
-  activeQuestIndex: 0
-  firstTimeInteraction: 1
-  currentDialogue: 0
+  dropChance: 10
+  specialItemPrefab: {fileID: 3283999851809008639, guid: 322d1716add7e444cae85ec1835f162f, type: 3}
+  hasRequiredItem: 0
+  playerHasItem: []
+  pickUpRange: 5
+  player: {fileID: 2205635936890155484, guid: 2e1a41d7362b3dd45bc95871553172dc, type: 3}
+  npcLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &3737968961407881917
 GameObject:
   m_ObjectHideFlags: 0

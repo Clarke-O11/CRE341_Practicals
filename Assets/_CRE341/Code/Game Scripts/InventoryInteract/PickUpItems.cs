@@ -26,7 +26,7 @@ public class PickUpItems : MonoBehaviour
         numberOfItems = itemInv.Count;
 
         //Check if player is in raneg and if 'E' is pressed
-        Vector3 distanceToPlayer = player.position - transform.position;
+        Vector3 distanceToPlayer = player.position - item.transform.position;
         if (distanceToPlayer.magnitude <= pickUpRange && Input.GetKeyDown(KeyCode.E) && numberOfItems < maxItems) 
         {
             PickUp();

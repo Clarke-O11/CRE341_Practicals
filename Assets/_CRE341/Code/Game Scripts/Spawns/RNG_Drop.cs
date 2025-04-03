@@ -14,12 +14,6 @@ public class RNG_Drop : MonoBehaviour
 
     bool spawning = false;
 
-    private void Start()
-    {
-        //randomNumber = UnityEngine.Random.Range(0, 101); //1-100
-        //randomTimer = UnityEngine.Random.Range(0, 11); //10-20, 10-100
-    }
-
     // Update is called once per frame
     void Update()
     {

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6020592533495580969}
   - component: {fileID: 1152229393643449142}
   - component: {fileID: -3612406337425559325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Item
-  m_TagString: Item
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   onInteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3283999851809008639, guid: 704fcafcde1f58e4d8d19794a1816142, type: 3}
+      - m_Target: {fileID: 3283999851809008639}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

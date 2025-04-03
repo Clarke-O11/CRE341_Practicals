@@ -100,6 +100,5 @@ public class Inventory : MonoBehaviour
 
 public enum ItemTypes 
 { 
-    Litter,
     SpecialItem
 }
