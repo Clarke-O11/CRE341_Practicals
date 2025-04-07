@@ -27,6 +27,8 @@ public class DropSpecialItem : MonoBehaviour
     [SerializeField] private LayerMask npcLayer; 
     [SerializeField] private LayerMask interactableLayer;
 
+    private AI_FSM aiState;
+
     Interactable currentInteractable;
     //public Image itemUI;
 
@@ -63,13 +65,14 @@ public class DropSpecialItem : MonoBehaviour
         { 
             hasRequiredItem = true;
 
-            if (hasRequiredItem && Input.GetKeyDown(KeyCode.R) && !returnedItem && Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit raycastHit, 5f, npcLayer)) //interacting with or looking at npc
+            if (hasRequiredItem && Input.GetKeyDown(KeyCode.R) && !returnedItem && Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit raycastHit, 3f, npcLayer)) //interacting with or looking at npc
             {
                 // give item to npc
                 returnedItem = true;
                 hasDroppedOnce = false;
                 playerHasItem.Remove(specialItemPrefab);
                 //itemUI.enabled = false;
+                aiState.playerVisible = true;
             }
         }
     }

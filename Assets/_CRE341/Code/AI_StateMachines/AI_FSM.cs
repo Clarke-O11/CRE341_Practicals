@@ -8,7 +8,7 @@ public class AI_FSM : MonoBehaviour
     
     // Private Variables
     [SerializeField] private float distanceToPlayer;
-    [SerializeField] private bool playerVisible;
+    public bool playerVisible;
     [SerializeField] private float chaseDistance;
     [SerializeField] private float attackDistance;
     [SerializeField] private float chaseHysterisis;
