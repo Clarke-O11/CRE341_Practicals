@@ -15,7 +15,7 @@ public class LitterMeter : MonoBehaviour
 
     private void Start()
     {
-       dropItem = GameObject.Find("NPC_00").GetComponent<RNG_Drop>();
+       dropItem = GameObject.Find("NPC_00(Clone)").GetComponent<RNG_Drop>();
     }
 
     // Update is called once per frame

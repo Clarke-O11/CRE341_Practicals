@@ -49,7 +49,7 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
             WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
             NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
         }
-        
+
         //NPC_00.transform.position = Vector3.MoveTowards(animator.transform.position, WaypointTarget.position, GameManager.Instance.NPC_AI_01.Speed * Time.deltaTime);
     }
 
