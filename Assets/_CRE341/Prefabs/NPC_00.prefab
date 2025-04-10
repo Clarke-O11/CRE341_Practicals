@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4211e09b2af81184c8f768421e1fa851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: 10
+  dropChance: 5
   specialItemPrefab: {fileID: 3283999851809008639, guid: 322d1716add7e444cae85ec1835f162f, type: 3}
   hasRequiredItem: 0
   playerHasItem: []

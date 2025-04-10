@@ -35,7 +35,7 @@ public class DropSpecialItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        randomNumber = UnityEngine.Random.Range(0, 101); //1-100
+        randomNumber = UnityEngine.Random.Range(0, 201); //1-200
         //randomTimer = UnityEngine.Random.Range(0, 101);
         if (randomNumber <= dropChance && !hasDroppedOnce)
         {

@@ -44,7 +44,7 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         Debug.Log("On State Update ~ Patrol State");
 
         // get parent object of the object containing the animator
-        if (Vector3.Distance(NPC_00.transform.position, WaypointTarget.position) < 0.1f)
+        if (Vector3.Distance(NPC_00.transform.position, WaypointTarget.position) < 1f)
         {
             WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
             NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
