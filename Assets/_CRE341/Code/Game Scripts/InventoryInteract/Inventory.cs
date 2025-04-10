@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     //private string itemName;
-    private int itemAmount;
+    public int itemAmount;
     private int itemMax;
     //public Image itemIcon;
 

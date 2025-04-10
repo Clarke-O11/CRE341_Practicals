@@ -12,7 +12,7 @@ public class SpawnItems : MonoBehaviour
 
     public GameObject itemPrefab; // Reference to item prefab
 	public GameObject groundObject;
-    [SerializeField] int numberOfItems = 5;
+    public int numberOfItems = 5;
     public List<GameObject> items = new List<GameObject>();
 
     [SerializeField] private int maxAttempts = 1000; // Safety limit to avoid an infinite loop.

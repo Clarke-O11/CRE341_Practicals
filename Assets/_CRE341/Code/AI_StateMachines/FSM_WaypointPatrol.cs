@@ -11,7 +11,8 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
     // list of gameObject waypoints
     List<GameObject> waypoints;
     [SerializeField] Transform WaypointTarget;
-    
+
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -21,12 +22,18 @@ public class FSM_WaypointPatrol : StateMachineBehaviour
         // get all waypoints with tag Waypoint
         waypoints = new List<GameObject>(GameObject.FindGameObjectsWithTag("Waypoint"));
         WaypointTarget = waypoints[Random.Range(0, waypoints.Count)].transform;
-
+        /*
         NPC_00 = GameObject.Find("NPC_00");
         if (NPC_00 == null)
         {
             NPC_00 = GameObject.Find("NPC_00(Clone)");
         }
+        NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
+        */
+
+        GameObject NPC_00 = animator.transform.root.gameObject;
+        // get AIState_Patrol child in NPC_000
+
         NPC_00.GetComponent<NavMeshAgent>().SetDestination(WaypointTarget.position);
     }
 

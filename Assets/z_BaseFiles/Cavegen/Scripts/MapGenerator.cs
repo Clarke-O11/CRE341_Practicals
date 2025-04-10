@@ -517,9 +517,11 @@ public class MapGenerator : MonoBehaviour {
 			if (validPositionFound)
 			{
 				Instantiate(npcPrefab, randomNPCPos, Quaternion.identity);
-				// add the NPC to the list
-				npcs.Add(npcPrefab);
-			}
+                // add the NPC to the list
+                npcPrefab.name = "NPC_00";
+                npcs.Add(npcPrefab);
+                
+            }
 			else
 			{
 				Debug.LogWarning("Failed to find a valid NavMesh point for NPC.");
