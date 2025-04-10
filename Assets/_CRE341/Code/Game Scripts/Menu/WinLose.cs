@@ -5,13 +5,15 @@ public class WinLose : MonoBehaviour
 {
     Inventory inv;
     GlobalTime timer;
-    public int minItems = 10;
+    //public int minItems = 10;
+    LitterMeter litter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         inv = GetComponent<Inventory>();
         timer = GetComponent<GlobalTime>();
+        litter = GetComponent<LitterMeter>();
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class WinLose : MonoBehaviour
     { 
         if (timer.timeFinished) 
         {
-            if (inv.itemInv.Count >= minItems) 
+            if (litter.meter.value < 70) // || inv.itemInv.Count >= minItems 
             { 
                 SceneManager.LoadScene("WinScreen");
             }

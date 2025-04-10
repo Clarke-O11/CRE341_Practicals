@@ -988,7 +988,7 @@ MonoBehaviour:
   randomFillPercent: 47
   numberOfNPCs: 4
   npcs: []
-  numberWaypoints: 4
+  numberWaypoints: 10
   waypoints: []
   surface: {fileID: 797153120}
   raycastHeight: 50
@@ -4040,7 +4040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 342239444}
-  currentTime: 300
+  currentTime: 180
   countdown: 1
   hasLimit: 0
   maxTime: 0
@@ -4057,7 +4057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05480a1780fefa047af36909127b9843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minItems: 10
 --- !u!114 &1559428536
 MonoBehaviour:
   m_ObjectHideFlags: 0

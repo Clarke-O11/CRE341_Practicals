@@ -24,26 +24,22 @@ public class LitterMeter : MonoBehaviour
         if (dropItem != null)
         {
             litterCount = this.spawner.numberOfItems += dropItem.droppedCount;
+            UpdateLitterMeter();
             Debug.Log($"There are {litterCount} amount(s) of Litter");
         }
         else 
         { 
-            Debug.Log("No dropItem found"); 
+            Debug.Log("No null reference"); 
         }
-        UpdateLitterMeter();
     }
     void UpdateLitterMeter() 
     {
-        CheckForPickUp();
-        meter.value = litterCount / maxCount * 100;
-        fillMeter.color = gradient.Evaluate(meter.normalizedValue);
-    }
-
-    void CheckForPickUp() 
-    {
-        if (inv.itemAmount >= 1) 
-        { 
+        if (inv.itemAmount >= 1)
+        {
             litterCount -= 1;
         }
+
+        meter.value = litterCount / maxCount * 100;
+        fillMeter.color = gradient.Evaluate(meter.normalizedValue);
     }
 }
