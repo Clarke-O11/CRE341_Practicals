@@ -1,2 +1,12 @@
 fileFormatVersion: 2
 guid: c9af162dd100cca459c103930c534b72
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - WaypointTarget: {fileID: 4030385040299147068, guid: 60359ab39d3ed3f42ab598c7b21b9ebd, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

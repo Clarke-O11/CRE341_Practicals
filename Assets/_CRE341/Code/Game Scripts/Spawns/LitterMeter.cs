@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class LitterMeter : MonoBehaviour
 {
     private SpawnItems spawner;
     private int litterCount;
-    private int maxCount = 70;
+    public int maxCount = 70;
     public RNG_Drop dropItem;
     private Inventory inv;
 
@@ -13,9 +14,11 @@ public class LitterMeter : MonoBehaviour
     public Image fillMeter;
     public Gradient gradient;
 
+    public GameObject NPC_00;
+
     private void Start()
     {
-       dropItem = GameObject.Find("NPC_00(Clone)").GetComponent<RNG_Drop>();
+       dropItem = NPC_00.GetComponent<RNG_Drop>();
     }
 
     // Update is called once per frame

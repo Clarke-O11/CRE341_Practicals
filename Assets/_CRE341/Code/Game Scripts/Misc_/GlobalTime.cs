@@ -14,6 +14,7 @@ public class GlobalTime : MonoBehaviour
     public float maxTime = 0; // time limit
 
     public bool timeFinished;
+    private LitterMeter meter;
 
     // Update is called once per frame
     void Update()
@@ -50,6 +51,11 @@ public class GlobalTime : MonoBehaviour
             SetTimerText();
             timerText.color = Color.red;
             enabled = false;
+        }
+
+        if (currentTime <= 60) 
+        {
+            meter.maxCount = 60;
         }
     }
 
