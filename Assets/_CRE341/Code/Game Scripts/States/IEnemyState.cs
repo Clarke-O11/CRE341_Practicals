@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IEnemyState
 {
-    //Mothman State Interface
+    // State Interface
 
     void Enter(AIBase aiBase); // Called when entering the state
 

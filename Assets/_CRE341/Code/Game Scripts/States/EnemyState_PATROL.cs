@@ -23,7 +23,7 @@ public class EnemyState_PATROL :  IEnemyState
         aiBase.PatrolPoints();
 
         aiBase.distanceToPlayer = Vector3.Distance(aiBase.player.transform.position, aiBase.transform.position);
-        if (aiBase.distanceToPlayer <= 5f) 
+        if (aiBase.distanceToPlayer <= 5f)
         {
             aiBase.SetState(new EnemyState_Idle());
         }

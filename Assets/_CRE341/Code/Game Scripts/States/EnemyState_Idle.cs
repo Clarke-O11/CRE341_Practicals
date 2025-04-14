@@ -18,17 +18,19 @@ public class EnemyState_Idle : IEnemyState
 
         aiBase.agent.speed = 0;
         aiBase.animator.SetBool("Idle", true);
+        aiBase.transform.LookAt(aiBase.player);
+        aiBase.distanceToPlayer = Vector3.Distance(aiBase.player.transform.position, aiBase.transform.position);
 
-        /*if (aiBase.distanceToPlayer > 5f)
+        if (aiBase.distanceToPlayer > 5f)
         {
             aiBase.SetState(new EnemyState_PATROL());
-        }*/
+            aiBase.animator.SetBool("Patrol", true);
+        }
 
     }
 
     public void Exit(AIBase aiBase)
     {
         Debug.Log("Exiting Idle State");
-        aiBase.SetState(new EnemyState_PATROL());
     }
 }

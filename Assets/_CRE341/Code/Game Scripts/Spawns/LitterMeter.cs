@@ -18,7 +18,7 @@ public class LitterMeter : MonoBehaviour
 
     private void Start()
     {
-       dropItem = GetComponent<AIBase>();
+       //dropItem = GetComponent<AIBase>();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class LitterMeter : MonoBehaviour
     {
         if (dropItem != null)
         {
-            litterCount = this.spawner.numberOfItems += dropItem.droppedCount;
+            litterCount = this.spawner.numberOfItems += NPC_00.GetComponent<AIBase>().droppedCount;//dropItem.droppedCount;
             UpdateLitterMeter();
             Debug.Log("no null reference");
         }
