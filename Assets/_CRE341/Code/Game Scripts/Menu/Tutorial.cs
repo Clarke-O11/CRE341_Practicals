@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 
 public class Tutorial : MonoBehaviour
 {
     public Image tutorial;
-    public TextMeshProUGUI intro;
-    public TextMeshProUGUI tutorialText;
+    public GameObject intro;
+    public GameObject tutorialText;
+    private GlobalTime timer;
 
     bool canShow;
     bool isActive;
@@ -14,8 +16,9 @@ public class Tutorial : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        tutorial.enabled = true;
-        intro.enabled = true;
+        //tutorial.enabled = true;
+        intro.SetActive(true);
+        canShow = true;
     }
 
     // Update is called once per frame
@@ -28,17 +31,17 @@ public class Tutorial : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isActive && canShow) 
         {
-            tutorialText.enabled = true;
-            intro.enabled = false;
+            tutorialText.SetActive(true);
+            intro.SetActive(false);
             isActive = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && isActive)
-        {
-            tutorialText.enabled = false;
-            intro.enabled = false;
-            isActive = false;
-            canShow = false;
-            tutorial.enabled = false;
+            if (Input.GetKeyDown(KeyCode.Space) && isActive)
+            {
+                tutorialText.SetActive(false);
+                //intro.gameObject.SetActive(false);
+                isActive = false;
+                canShow = false;
+                tutorial.gameObject.SetActive(false);
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ public class LitterMeter : MonoBehaviour
     private SpawnItems spawner;
     private int litterCount;
     public int maxCount = 70;
-    public RNG_Drop dropItem;
+    private AIBase dropItem;
     private Inventory inv;
 
     public Slider meter;
@@ -18,7 +18,7 @@ public class LitterMeter : MonoBehaviour
 
     private void Start()
     {
-       dropItem = NPC_00.GetComponent<RNG_Drop>();
+       dropItem = GetComponent<AIBase>();
     }
 
     // Update is called once per frame
@@ -28,11 +28,11 @@ public class LitterMeter : MonoBehaviour
         {
             litterCount = this.spawner.numberOfItems += dropItem.droppedCount;
             UpdateLitterMeter();
-            Debug.Log($"There are {litterCount} amount(s) of Litter");
+            Debug.Log("no null reference");
         }
         else 
         { 
-            Debug.Log("No null reference"); 
+            Debug.Log("dropItem is null"); 
         }
     }
     void UpdateLitterMeter() 
@@ -40,6 +40,7 @@ public class LitterMeter : MonoBehaviour
         if (inv.itemAmount >= 1)
         {
             litterCount -= 1;
+            Debug.Log("Littercount = " + litterCount);
         }
 
         meter.value = litterCount / maxCount * 100;
