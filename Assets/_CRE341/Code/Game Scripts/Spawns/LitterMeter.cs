@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -15,6 +16,7 @@ public class LitterMeter : MonoBehaviour
     public Gradient gradient;
 
     public GameObject NPC_00;
+    public TextMeshProUGUI litterPercentage;
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class LitterMeter : MonoBehaviour
         {
             litterCount = spawner.numberOfItems += dropItem.droppedCount;//NPC_00.GetComponent<AIBase>().droppedCount;
             //UpdateLitterMeter();
+            litterPercentage.text = meter.value.ToString() + "%";
             Debug.Log("no null reference");
         }
         else 
@@ -49,6 +52,15 @@ public class LitterMeter : MonoBehaviour
         }
 
         meter.value = (litterCount / maxCount) * 100f;
+        if (meter.value >= maxCount) 
+        {
+            litterPercentage.color = Color.red;
+        }
+        else 
+        {
+            litterPercentage.color = Color.white;
+        }
+        //litterPercentage.text = meter.value.ToString() + "%";
         fillMeter.color = gradient.Evaluate(meter.normalizedValue);
     }
 }
