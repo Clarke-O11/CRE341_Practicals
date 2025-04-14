@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class LitterMeter : MonoBehaviour
 {
     private SpawnItems spawner;
-    private int litterCount;
-    public int maxCount = 70;
+    private float litterCount;
+    public float maxCount = 70f;
     private AIBase dropItem;
     private Inventory inv;
 
@@ -24,10 +24,13 @@ public class LitterMeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateLitterMeter();
+        dropItem = NPC_00.GetComponent<AIBase>();
+        spawner = this.GetComponent<SpawnItems>();
         if (dropItem != null)
         {
-            litterCount = this.spawner.numberOfItems += NPC_00.GetComponent<AIBase>().droppedCount;//dropItem.droppedCount;
-            UpdateLitterMeter();
+            litterCount = spawner.numberOfItems += dropItem.droppedCount;//NPC_00.GetComponent<AIBase>().droppedCount;
+            //UpdateLitterMeter();
             Debug.Log("no null reference");
         }
         else 
@@ -37,13 +40,15 @@ public class LitterMeter : MonoBehaviour
     }
     void UpdateLitterMeter() 
     {
+        GameObject player = GameObject.FindWithTag("Player");
+        inv = player.GetComponent<Inventory>();
         if (inv.itemAmount >= 1)
         {
-            litterCount -= 1;
+            litterCount -= 1f;
             Debug.Log("Littercount = " + litterCount);
         }
 
-        meter.value = litterCount / maxCount * 100;
+        meter.value = (litterCount / maxCount) * 100f;
         fillMeter.color = gradient.Evaluate(meter.normalizedValue);
     }
 }
