@@ -130,7 +130,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2a6171e58c027944d810a8809b1e8fd3, type: 2}
+  m_Motion: {fileID: 7400000, guid: b72394aaba98d694baedf1cea09df67b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -143,7 +143,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Breathing Idle
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -157,7 +157,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 18ca82e163d89174d80700affb530762, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2bea653e4dcf1c1448c054cb77265045, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
