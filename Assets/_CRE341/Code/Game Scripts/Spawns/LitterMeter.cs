@@ -11,11 +11,13 @@ public class LitterMeter : MonoBehaviour
 {
 
     private SpawnItems spawner;
-    public float litterCount;
-    private float spawnedCount;
+    public int litterCount;
+    public int spawnedCount;
     public float maxCount = 70f;
     private AIBase dropItem;
     private Inventory inv;
+    public int collectedItems;
+    public int totalCollectedItems;
 
     public int dropped;
 
@@ -32,6 +34,7 @@ public class LitterMeter : MonoBehaviour
     {
         //dropItem = GetComponent<AIBase>();
 
+        spawnedCount = spawner.numberOfItems;
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class LitterMeter : MonoBehaviour
         spawner = this.GetComponent<SpawnItems>();
         if (dropItem != null && spawner != null)
         {
-            litterCount = (float)spawner.numberOfItems + dropped;//NPC_00.GetComponent<AIBase>().droppedCount;
+            litterCount = spawner.numberOfItems + dropped;//NPC_00.GetComponent<AIBase>().droppedCount;
             Debug.Log(spawner.numberOfItems + " : " + dropItem.droppedCount);
             UpdateLitterMeter();
             litterPercentage.text = meter.value.ToString() + "%";
@@ -65,9 +68,13 @@ public class LitterMeter : MonoBehaviour
         inv = player.GetComponent<Inventory>();
         if (inv.itemAmount == inv.itemAmount + 1)
         {
-            litterCount -= 1f;
+            litterCount -= 1;
             Debug.Log("Littercount = " + litterCount);
         }
+
+        collectedItems = inv.itemAmount;
+        litterCount = litterCount-collectedItems;
+        
 
         meter.value = (litterCount / maxCount) * 100f;
         if (meter.value >= maxCount) 
