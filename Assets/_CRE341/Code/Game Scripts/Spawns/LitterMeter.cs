@@ -9,15 +9,13 @@ using UnityEngine.UI;
 
 public class LitterMeter : MonoBehaviour
 {
-
     private SpawnItems spawner;
     public int litterCount;
     public int spawnedCount;
     public float maxCount = 70f;
     private AIBase dropItem;
     private Inventory inv;
-    public int collectedItems;
-    public int totalCollectedItems;
+    public int totalCollectedItems = 0; // Track total collected items, not just current inventory
 
     public int dropped;
 
@@ -29,79 +27,100 @@ public class LitterMeter : MonoBehaviour
     public TextMeshProUGUI litterPercentage;
 
     public MapGenerator mapGenerator;
+    
+    private int previousInventoryCount = 0;
 
     private void Start()
     {
-        //dropItem = GetComponent<AIBase>();
-
-        spawnedCount = spawner.numberOfItems;
+        spawner = GetComponent<SpawnItems>();
+        if (spawner != null)
+        {
+            spawnedCount = spawner.numberOfItems;
+        }
+            
     }
 
-    // Update is called once per frame
     void Update()
     {
-        dropped = GetNPCDroppedCount();
-
-
-        UpdateLitterMeter();
-        dropItem = NPC_00.GetComponent<AIBase>();
-        spawner = this.GetComponent<SpawnItems>();
-        if (dropItem != null && spawner != null)
+        // Get references once
+        if (dropItem == null && NPC_00 != null)
+            dropItem = NPC_00.GetComponent<AIBase>();
+            
+        if (spawner == null)
+            spawner = GetComponent<SpawnItems>();
+            
+        // Track inventory changes to detect collections
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
         {
-            litterCount = spawner.numberOfItems + dropped;//NPC_00.GetComponent<AIBase>().droppedCount;
-            Debug.Log(spawner.numberOfItems + " : " + dropItem.droppedCount);
-            UpdateLitterMeter();
-            litterPercentage.text = meter.value.ToString() + "%";
-            Debug.Log("no null reference");
-            Debug.Log("Littercount = " + litterCount);
+            inv = player.GetComponent<Inventory>();
+            if (inv != null)
+            {
+                // If inventory decreased (items were deposited in bin)
+                if (previousInventoryCount > inv.itemAmount)
+                {
+                    // No need to change total collected - they're still collected
+                    // They're just in the bin now instead of inventory - not sure what the bin should do though??
+                }
+                // If inventory increased (new item picked up)
+                else if (previousInventoryCount < inv.itemAmount)
+                {
+                    totalCollectedItems += (inv.itemAmount - previousInventoryCount);
+                }
+                
+                previousInventoryCount = inv.itemAmount;
+            }
         }
-        else 
-        { 
-            Debug.Log("dropItem is null"); 
+        
+        // Update dropped count
+        dropped = GetNPCDroppedCount();
+        
+        // Calculate total litter in the world
+        if (spawner != null)
+        {
+            litterCount = spawner.numberOfItems + dropped - totalCollectedItems;
+            
+            // Update UI
+            UpdateLitterMeter();
+            litterPercentage.text = meter.value.ToString("F0") + "%";
         }
     }
 
-
-    void UpdateLitterMeter() 
+    void UpdateLitterMeter()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        inv = player.GetComponent<Inventory>();
-        if (inv.itemAmount == inv.itemAmount + 1)
-        {
-            litterCount -= 1;
-            Debug.Log("Littercount = " + litterCount);
-        }
-
-        collectedItems = inv.itemAmount;
-        litterCount = litterCount-collectedItems;
+        // Update meter based on calculated litter count
+        meter.value = Mathf.Clamp((litterCount / maxCount) * 100f, 0f, 100f);
         
-
-        meter.value = (litterCount / maxCount) * 100f;
-        if (meter.value >= maxCount) 
+        // Update colors
+        if (meter.value >= maxCount)
         {
             litterPercentage.color = Color.red;
         }
-        else 
+        else
         {
             litterPercentage.color = Color.white;
         }
-        //litterPercentage.text = meter.value.ToString() + "%";
+        
         fillMeter.color = gradient.Evaluate(meter.normalizedValue);
     }
 
-
     int GetNPCDroppedCount()
     {
-
         int c = 0;
-
-        for (int i = 0; i < mapGenerator.npcs.Count; i++)
+        
+        if (mapGenerator != null && mapGenerator.npcs != null)
         {
-            c = c + mapGenerator.npcs[i].GetComponent<AIBase>().droppedCount;
+            for (int i = 0; i < mapGenerator.npcs.Count; i++)
+            {
+                if (mapGenerator.npcs[i] != null)
+                {
+                    AIBase aiBase = mapGenerator.npcs[i].GetComponent<AIBase>();
+                    if (aiBase != null)
+                        c += aiBase.droppedCount;
+                }
+            }
         }
-
-        Debug.Log(c);
+        
         return c;
     }
-
 }
