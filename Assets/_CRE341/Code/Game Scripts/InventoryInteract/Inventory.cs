@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
 
     public float pickUpRange;
 
-    bool canPickup = true;
+    //bool canPickup = true;
 
     public int numberOfItems;     //number of litter picked up
     public int maxItems = 10;     //max litter player can hold
@@ -35,21 +35,16 @@ public class Inventory : MonoBehaviour
     [SerializeField] private LayerMask pickUpLayer;
 
     public GameObject itemPrefab;
-    public GameObject specialItemPrefab;      //special NPC items
-    ItemTypes itemTypes;
 
     public bool hasRequiredItem;
+    public bool inventoryFull = false;
 
+    private ItemTypes item;
 
     // Update is called once per frame
     void Update()
     {
         InventoryDisplay();
-
-        if (numberOfItems > maxItems) 
-        {
-            numberOfItems = maxItems;
-        }
     }
 
     void InventoryDisplay() 
@@ -69,20 +64,34 @@ public class Inventory : MonoBehaviour
 
     public void AddItem() 
     { 
-        if(canPickup == true && gameObject.name == "Litter" || canPickup == true && gameObject.name == "Litter_Drop")
-        { 
-            numberOfItems = numberOfItems + 1;
-            itemInv.Add(itemPrefab);
-            //Debug.Log(gameObject.name + " detected");
-            Console.WriteLine($"Added: {itemPrefab} to inventory"); 
-        }
-        if (itemTypes == ItemTypes.SpecialItem)
+        //if(inventoryFull == false && canPickup == true && gameObject.name == "Litter" || inventoryFull == false && canPickup == true && gameObject.name == "Litter_Drop")
+        //{ 
+        //    numberOfItems = numberOfItems + 1;
+        //    itemInv.Add(itemPrefab);
+        //    Debug.Log(numberOfItems);
+        //    Debug.Log($"Added: {itemPrefab} to inventory");
+
+        //    if (numberOfItems > maxItems)
+        //    {
+        //        numberOfItems = maxItems;
+        //        inventoryFull = true;
+        //    }
+        //}
+        if (inventoryFull == false && item == ItemTypes.Litter)
         {
             numberOfItems = numberOfItems + 1;
-            itemInv.Add(specialItemPrefab);
-            //Debug.Log(gameObject.name + " detected");
-            Console.WriteLine($"Added: {specialItemPrefab} to inventory");
+            //itemInv.Add(specialItemPrefab);
+            ////Debug.Log(gameObject.name + " detected");
+            //Console.WriteLine($"Added: {specialItemPrefab} to inventory");
             hasRequiredItem = true;
+            Debug.Log(numberOfItems);
+            Debug.Log($"Added: {itemPrefab} to inventory");
+
+            if (numberOfItems > maxItems)
+            {
+                numberOfItems = maxItems;
+                inventoryFull = true;
+            }
         }
 
     }
@@ -92,13 +101,14 @@ public class Inventory : MonoBehaviour
         if (numberOfItems <= maxItems) 
         {
             numberOfItems = 0;
-            canPickup = false;
+            //canPickup = false;
+            inventoryFull = false;
         }
     }
 
 }
 
-public enum ItemTypes 
+public enum ItemTypes
 { 
-    SpecialItem
+    Litter
 }

@@ -20,6 +20,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.Interact();
             inventory.AddItem();
+            Debug.Log("Picked Up Litter");
             //inventory.EmptyInventory();
         }
         else if (Input.GetKeyDown(KeyCode.Q) && currentInteractable != null)

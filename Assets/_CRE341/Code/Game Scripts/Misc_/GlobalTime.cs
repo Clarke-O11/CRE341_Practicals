@@ -15,6 +15,7 @@ public class GlobalTime : MonoBehaviour
 
     public bool timeFinished;
     private LitterMeter meter;
+    public GameObject litterM;
 
     // Update is called once per frame
     void Update()
@@ -30,6 +31,7 @@ public class GlobalTime : MonoBehaviour
 
     private void Timer() 
     {
+        meter = litterM.GetComponent<LitterMeter>();
         //currentTime = countdown ? currentTime -= Time.deltaTime : currentTime += Time.deltaTime;
 
         if (currentTime <= 0.01f)
@@ -53,10 +55,10 @@ public class GlobalTime : MonoBehaviour
             enabled = false;
         }
 
-        if (currentTime <= 60) 
-        {
-            meter.maxCount = 60;
-        }
+        //if (currentTime <= 60f) 
+        //{
+        //    meter.maxCount = 60f;
+        //}
     }
 
 }

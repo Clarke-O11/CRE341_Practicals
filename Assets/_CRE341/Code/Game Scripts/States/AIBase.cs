@@ -156,7 +156,7 @@ public class AIBase : MonoBehaviour
     public void Dropping()
     {
         randomNumber = UnityEngine.Random.Range(0, 101); //1-100
-        randomTimer = UnityEngine.Random.Range(19, 60); //10-60
+        randomTimer = UnityEngine.Random.Range(9, 20); //10-20
         if (randomNumber <= dropChance && spawning == false && droppedCount < maxDropped)
         {
             StartCoroutine(ItemDropped());
@@ -172,7 +172,7 @@ public class AIBase : MonoBehaviour
         spawning = false;
     }
 
-    public void SpecialItemDropped()
+    /*public void SpecialItemDropped()
     {
         itemClone = (GameObject)Instantiate(specialItemPrefab, this.transform.position, Quaternion.identity);
         hasDroppedOnce = true;
@@ -200,5 +200,5 @@ public class AIBase : MonoBehaviour
     {
         playerHasItem.Add(requiredItem);
         itemUI.SetActive(true);
-    }
+    }*/
 }

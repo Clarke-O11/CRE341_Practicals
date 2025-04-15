@@ -30,8 +30,8 @@ public class EnemyState_PATROL :  IEnemyState
         
         aiBase.Dropping();
         
-
-        aiBase.itemRandomNumber = UnityEngine.Random.Range(0, 201); //1-200
+        // NPC Drop Significant Item
+        /*aiBase.itemRandomNumber = UnityEngine.Random.Range(0, 201); //1-200
         //itemRandomTimer = UnityEngine.Random.Range(0, 101);
         if (aiBase.itemRandomNumber <= aiBase.itemDropChance && !aiBase.hasDroppedOnce)
         {
@@ -45,7 +45,7 @@ public class EnemyState_PATROL :  IEnemyState
             Debug.Log($"Picked up {aiBase.specialItemPrefab}.");
         }
 
-        aiBase.AreRequirementsCompleted();
+        aiBase.AreRequirementsCompleted();*/
 
       }
       public void Exit(AIBase aiBase)
