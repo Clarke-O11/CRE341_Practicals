@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LitterMeter : MonoBehaviour
 {
     private SpawnItems spawner;
-    private float litterCount;
+    public float litterCount;
     public float maxCount = 70f;
     private AIBase dropItem;
     private Inventory inv;
@@ -32,7 +32,7 @@ public class LitterMeter : MonoBehaviour
         if (dropItem != null)
         {
             litterCount = spawner.numberOfItems += dropItem.droppedCount;//NPC_00.GetComponent<AIBase>().droppedCount;
-            //UpdateLitterMeter();
+            UpdateLitterMeter();
             litterPercentage.text = meter.value.ToString() + "%";
             Debug.Log("no null reference");
         }

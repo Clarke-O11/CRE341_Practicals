@@ -8,7 +8,7 @@ public class EnemyState_Idle : IEnemyState
     public void Enter(AIBase aiBase)
     {
         Debug.Log("Entering Idle State");
-        
+        aiBase.agent.isStopped = true;
 
     }
 

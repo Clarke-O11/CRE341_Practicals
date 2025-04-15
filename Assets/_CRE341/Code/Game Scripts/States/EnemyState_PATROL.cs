@@ -13,7 +13,7 @@ public class EnemyState_PATROL :  IEnemyState
     {
         Debug.Log("Entering Chase State");
         aiBase.agent.speed = 4;
-        aiBase.agent.Resume();
+        //aiBase.agent.Resume();
         aiBase.agent.isStopped = false;
     }
     public void Update(AIBase aiBase)
@@ -27,17 +27,12 @@ public class EnemyState_PATROL :  IEnemyState
         {
             aiBase.SetState(new EnemyState_Idle());
         }
-            
-        aiBase.randomNumber = UnityEngine.Random.Range(0, 101); //1-100
-        aiBase.randomTimer = UnityEngine.Random.Range(19, 60); //10-60
-        if (aiBase.randomNumber <= aiBase.dropChance && aiBase.spawning == false && aiBase.droppedCount < aiBase.maxDropped)
-        {
-              aiBase.ItemDropped();
-            
-        }
+        
+        aiBase.Dropping();
+        
 
           aiBase.itemRandomNumber = UnityEngine.Random.Range(0, 201); //1-200
-          //randomTimer = UnityEngine.Random.Range(0, 101);
+          //itemRandomTimer = UnityEngine.Random.Range(0, 101);
           if (aiBase.itemRandomNumber <= aiBase.itemDropChance && !aiBase.hasDroppedOnce)
           {
               aiBase.SpecialItemDropped();

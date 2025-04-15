@@ -628,7 +628,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerDetected: 0
   itemDropped: {fileID: 3283999851809008639, guid: 704fcafcde1f58e4d8d19794a1816142, type: 3}
-  dropChance: 5
+  dropChance: 20
   randomNumber: 0
   randomTimer: 0
   spawning: 0

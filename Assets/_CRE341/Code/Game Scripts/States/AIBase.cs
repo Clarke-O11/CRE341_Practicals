@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEditor.Experimental.GraphView;
 using Unity.VisualScripting;
+using Unity.Cinemachine;
 
 public class AIBase : MonoBehaviour
 {
@@ -156,6 +157,15 @@ public class AIBase : MonoBehaviour
         return false;
     }
 
+    public void Dropping()
+    {
+        randomNumber = UnityEngine.Random.Range(0, 101); //1-100
+        randomTimer = UnityEngine.Random.Range(19, 60); //10-60
+        if (randomNumber <= dropChance && spawning == false && droppedCount < maxDropped)
+        {
+            StartCoroutine(ItemDropped());
+        }
+    }
     public IEnumerator ItemDropped()
     {
         //if (randomNumber <= dropChance) 
