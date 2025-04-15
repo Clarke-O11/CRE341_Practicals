@@ -1395,7 +1395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7f5dd06e261ae4790e5398bc3b7b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  litterCount: 0
   maxCount: 70
+  dropped: 0
   meter: {fileID: 1889783362}
   fillMeter: {fileID: 663667809}
   gradient:
@@ -1430,6 +1432,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   NPC_00: {fileID: 3628545954237388218, guid: 9cd97f6f36f4728469d9266a56f839e0, type: 3}
   litterPercentage: {fileID: 1091583845}
+  mapGenerator: {fileID: 509230442}
 --- !u!1 &631091595
 GameObject:
   m_ObjectHideFlags: 0

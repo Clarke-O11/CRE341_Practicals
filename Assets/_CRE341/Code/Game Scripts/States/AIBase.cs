@@ -18,10 +18,6 @@ public class AIBase : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-   
-
-   
-
     [Header("Patrol")]
     public Transform[] patrolPoints;
     public Transform centrePoint;
@@ -40,7 +36,7 @@ public class AIBase : MonoBehaviour
     public int randomTimer;
     public bool spawning = false;
     public int droppedCount;
-    public int maxDropped = 50;
+    public float maxDropped = 50;
 
     [Header("Drop Special Item")]
     public int itemDropChance;
@@ -58,7 +54,7 @@ public class AIBase : MonoBehaviour
     public LayerMask interactableLayer;
     private AI_FSM aiState;
     Interactable currentInteractable;
-    //public Image itemUI;
+    public GameObject itemUI;
 
     [Header("Animator")]
     public Animator animator;
@@ -188,13 +184,13 @@ public class AIBase : MonoBehaviour
         {
             hasRequiredItem = true;
 
-            if (hasRequiredItem && Input.GetKeyDown(KeyCode.R) && !returnedItem && Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit raycastHit, 3f, npcLayer)) //interacting with or looking at npc
+            if (hasRequiredItem && Input.GetKeyDown(KeyCode.R) && !returnedItem && distanceToPlayer <= 5f)//Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit raycastHit, 3f, npcLayer)) //interacting with or looking at npc
             {
                 // give item to npc
                 returnedItem = true;
                 hasDroppedOnce = false;
                 playerHasItem.Remove(specialItemPrefab);
-                //itemUI.enabled = false;
+                itemUI.SetActive(false);
                 aiState.playerVisible = true;
             }
         }
@@ -203,6 +199,6 @@ public class AIBase : MonoBehaviour
     public void PicksUpItem()
     {
         playerHasItem.Add(requiredItem);
-        //itemUI.enabled = true;
+        itemUI.SetActive(true);
     }
 }

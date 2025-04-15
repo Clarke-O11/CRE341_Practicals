@@ -5,7 +5,6 @@ using System;
 using Unity.AI.Navigation;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
-using UnityEditor.ShaderGraph.Internal;
 
 public class MapGenerator : MonoBehaviour {
 
@@ -21,8 +20,8 @@ public class MapGenerator : MonoBehaviour {
 	[Range(0,58)]
 	public int randomFillPercent;
 
-	[SerializeField] int numberOfNPCs = 5;
-	[SerializeField] List<GameObject> npcs = new List<GameObject>();
+	public int numberOfNPCs = 5;
+	public List<GameObject> npcs = new List<GameObject>();
 	[SerializeField] int numberWaypoints = 4;
 	[SerializeField] List<GameObject> waypoints = new List<GameObject>();
 
@@ -516,10 +515,11 @@ public class MapGenerator : MonoBehaviour {
 
 			if (validPositionFound)
 			{
-				Instantiate(npcPrefab, randomNPCPos, Quaternion.identity);
+				GameObject npc = Instantiate(npcPrefab, randomNPCPos, Quaternion.identity);
                 // add the NPC to the list
                 npcPrefab.name = "NPC_00";
-                npcs.Add(npcPrefab);
+                //npcs.Add(npcPrefab);
+				npcs.Add(npc);
                 
             }
 			else
