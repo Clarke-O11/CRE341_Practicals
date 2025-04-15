@@ -634,6 +634,11 @@ MonoBehaviour:
   spawning: 0
   droppedCount: 0
   maxDropped: 50
+  litter:
+  - {fileID: 5014534029607181802, guid: fefff402f0ec51d46959f85b0832c875, type: 3}
+  - {fileID: 8533159227742208775, guid: aa1d07c19187bbb47a5858c98efafc45, type: 3}
+  - {fileID: 4206777746192121888, guid: b09b59485cbc8f042bc66b378a087ff8, type: 3}
+  - {fileID: 7183317946236706113, guid: 31357727bfcc9504a989defac017b879, type: 3}
   itemDropChance: 5
   itemRandomNumber: 0
   itemRandomTimer: 0
@@ -651,6 +656,16 @@ MonoBehaviour:
     m_Bits: 256
   itemUI: {fileID: 6668776742753575608, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
   animator: {fileID: 8278871665040200649}
+  lines:
+  - '*Sighs* Ugh...this place stinks. Why is it so messy?'
+  - What? I dropped something? Well pick it up. It's obviously your job.
+  - DON'T LOOK AT ME! I will not succumb to your MIND CONTROL!!
+  - Not bad. All this place needs is a little TLC...or maybe we're already DOOMED!
+  - Wow a real robot. You remind me of what's-his-name from that one movie where
+    a robot cleans the Earth after...nevermind..
+  - Don't you just love the smell of pollution in the morning?
+  text: {fileID: 47526323115883888, guid: be4a024f68e63734cac520b91df7eb3e, type: 3}
+  textParent: {fileID: 6691526649921696301, guid: be4a024f68e63734cac520b91df7eb3e, type: 3}
 --- !u!1 &3737968961407881917
 GameObject:
   m_ObjectHideFlags: 0

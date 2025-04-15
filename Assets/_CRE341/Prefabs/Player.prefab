@@ -273,8 +273,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   itemPrefab: {fileID: 3283999851809008639, guid: 8140a4974dbf01449b58593fded19d35, type: 3}
-  specialItemPrefab: {fileID: 3283999851809008639, guid: 322d1716add7e444cae85ec1835f162f, type: 3}
   hasRequiredItem: 0
+  inventoryFull: 0
 --- !u!114 &832516372124987736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +293,7 @@ MonoBehaviour:
   hasLimit: 0
   maxTime: 0
   timeFinished: 0
+  litterM: {fileID: 0}
 --- !u!114 &863604136492450329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05480a1780fefa047af36909127b9843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meter: {fileID: 0}
 --- !u!114 &1176206433336501479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +314,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571807527175990118}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c469f50d7c5a7d44a994518ed5f4c647, type: 3}
   m_Name: 

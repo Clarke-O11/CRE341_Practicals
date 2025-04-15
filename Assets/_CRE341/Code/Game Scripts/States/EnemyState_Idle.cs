@@ -25,6 +25,8 @@ public class EnemyState_Idle : IEnemyState
         {
             aiBase.SetState(new EnemyState_PATROL());
             aiBase.animator.SetBool("Patrol", true);
+            //aiBase.textParent.SetActive(false);
+            aiBase.text.enabled = false;
         }
 
     }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEditor.Experimental.GraphView;
 using Unity.VisualScripting;
 using Unity.Cinemachine;
+using TMPro;
 
 public class AIBase : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class AIBase : MonoBehaviour
     public bool spawning = false;
     public int droppedCount;
     public float maxDropped = 50;
+    public GameObject[] litter;
 
     [Header("Drop Special Item")]
     public int itemDropChance;
@@ -59,11 +61,16 @@ public class AIBase : MonoBehaviour
     [Header("Animator")]
     public Animator animator;
 
+    [Header("Dialogue")]
+    public List<string> lines = new List<string>();
+    public TextMeshProUGUI text;
+    public GameObject textParent;
     private void Awake()
     {
   
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        //lines = new List<string>();
         
     }
 
@@ -74,6 +81,9 @@ public class AIBase : MonoBehaviour
             player = GameObject.FindWithTag("Player").transform;
         }
         SetState(new EnemyState_PATROL());
+
+        textParent.SetActive(false);
+        text.enabled = false;
 
     }
 
@@ -165,11 +175,21 @@ public class AIBase : MonoBehaviour
     public IEnumerator ItemDropped()
     {
         //if (randomNumber <= dropChance) 
-        Instantiate(itemDropped, this.transform.position, Quaternion.identity);
+        //litter[Random.Range(0, lines.Count)];
+        Instantiate(litter[Random.Range(0, litter.Length)], this.transform.position, Quaternion.identity);
+        //Instantiate(itemDropped, this.transform.position, Quaternion.identity);
         spawning = true;
         droppedCount += 1;
         yield return new WaitForSeconds(randomTimer);
         spawning = false;
+    }
+    public void Dialogue() 
+    {
+        text.enabled = true;
+        //textParent.SetActive(true);
+        string dialogue = lines[Random.Range(0, lines.Count)];
+        text = textParent.GetComponent<TextMeshProUGUI>();
+        text.text = dialogue;
     }
 
     /*public void SpecialItemDropped()

@@ -60,7 +60,7 @@ public class LitterMeter : MonoBehaviour
                 if (previousInventoryCount > inv.itemAmount)
                 {
                     // No need to change total collected - they're still collected
-                    // They're just in the bin now instead of inventory - not sure what the bin should do though??
+                    // They're just in the bin now instead of inventory
                 }
                 // If inventory increased (new item picked up)
                 else if (previousInventoryCount < inv.itemAmount)
