@@ -13,7 +13,6 @@ TagManager:
   - WayPoints
   - Item
   - Interactable
-  - Meter
   layers:
   - Default
   - TransparentFX

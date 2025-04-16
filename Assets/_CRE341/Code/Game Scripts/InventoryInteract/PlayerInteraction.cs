@@ -7,9 +7,16 @@ public class PlayerInteraction : MonoBehaviour
 
     private Inventory inventory;
 
+    private AudioClip pickupSound;
+    private AudioClip emptySound;
+    public AudioSource audioSource;
+
     private void Start()
     {
-        inventory = GetComponent<Inventory>();      
+        inventory = GetComponent<Inventory>();
+        audioSource = GetComponent<AudioSource>();
+        pickupSound = (AudioClip)Resources.Load("SFX_Pop_Bottle_Glass_Tiny_1");
+        emptySound = (AudioClip)Resources.Load("SFX_Pop_Bottle_Big_1");
     }
 
     // Update is called once per frame
@@ -22,10 +29,14 @@ public class PlayerInteraction : MonoBehaviour
             inventory.AddItem();
             Debug.Log("Picked Up Litter");
             //inventory.EmptyInventory();
+            audioSource.clip = pickupSound; 
+            audioSource.Play();
         }
         else if (Input.GetKeyDown(KeyCode.Q) && currentInteractable != null)
         {
             inventory.EmptyInventory();
+            audioSource.clip = emptySound;
+            audioSource.Play();
         }
     }
 
