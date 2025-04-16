@@ -65,7 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What? I dropped something? Well pick it up. It's obviously your job.
+  m_text: Not bad. All this place needs is a little TLC...or maybe we're already
+    DOOMED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c4d1033c8a0d29478e25a13243c4232, type: 2}
   m_sharedMaterial: {fileID: 6222756537766458872, guid: 1c4d1033c8a0d29478e25a13243c4232, type: 2}

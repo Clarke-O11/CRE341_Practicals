@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,9 +64,61 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6867817067360422807, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6191595028182980069, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -5365949894285169726, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4241052995424246941, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1823206881329447225, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1480756445571635573, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -830648843362435532, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
       propertyPath: m_Name
       value: RottenApple
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319648730747250577, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379836402047742272, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3779745573541866595, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941155030664944327, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -80,7 +132,7 @@ PrefabInstance:
       addedObject: {fileID: 1950757721941965859}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2556057712088832429}
+      addedObject: {fileID: 3161457481289242206}
   m_SourcePrefab: {fileID: 100100000, guid: 111586cde2452bb43833854503e1b8ff, type: 3}
 --- !u!1 &4206777746192121888 stripped
 GameObject:
@@ -133,8 +185,8 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!135 &2556057712088832429
-SphereCollider:
+--- !u!65 &3161457481289242206
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -152,5 +204,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.05, y: 0.1, z: 0.04}
+  m_Center: {x: 0, y: 0, z: -0.01}

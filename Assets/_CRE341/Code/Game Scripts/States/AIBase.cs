@@ -61,10 +61,10 @@ public class AIBase : MonoBehaviour
     [Header("Animator")]
     public Animator animator;
 
-    [Header("Dialogue")]
-    public List<string> lines = new List<string>();
-    public TextMeshProUGUI text;
-    public GameObject textParent;
+    //[Header("Dialogue")]
+    //public List<string> lines = new List<string>();
+    //public TextMeshProUGUI text;
+    //public GameObject textParent;
     private void Awake()
     {
   
@@ -82,8 +82,8 @@ public class AIBase : MonoBehaviour
         }
         SetState(new EnemyState_PATROL());
 
-        textParent.SetActive(false);
-        text.enabled = false;
+        //textParent.SetActive(false);
+        //text.enabled = false;
 
     }
 
@@ -183,14 +183,14 @@ public class AIBase : MonoBehaviour
         yield return new WaitForSeconds(randomTimer);
         spawning = false;
     }
-    public void Dialogue() 
-    {
-        text.enabled = true;
-        //textParent.SetActive(true);
-        string dialogue = lines[Random.Range(0, lines.Count)];
-        text = textParent.GetComponent<TextMeshProUGUI>();
-        text.text = dialogue;
-    }
+    //public void Dialogue() 
+    //{
+    //    text.enabled = true;
+    //    //textParent.SetActive(true);
+    //    string dialogue = lines[Random.Range(0, lines.Count)];
+    //    text = textParent.GetComponent<TextMeshProUGUI>();
+    //    text.text = dialogue;
+    //}
 
     /*public void SpecialItemDropped()
     {

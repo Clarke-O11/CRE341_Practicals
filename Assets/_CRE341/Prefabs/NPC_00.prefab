@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: -8965160511464734696}
   - component: {fileID: 1304408128410965533}
   - component: {fileID: 9057715915039319490}
+  - component: {fileID: 7631720337427465099}
   m_Layer: 9
   m_Name: NPC_00
   m_TagString: NPC
@@ -656,16 +657,27 @@ MonoBehaviour:
     m_Bits: 256
   itemUI: {fileID: 6668776742753575608, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
   animator: {fileID: 8278871665040200649}
-  lines:
-  - '*Sighs* Ugh...this place stinks. Why is it so messy?'
-  - What? I dropped something? Well pick it up. It's obviously your job.
-  - DON'T LOOK AT ME! I will not succumb to your MIND CONTROL!!
-  - Not bad. All this place needs is a little TLC...or maybe we're already DOOMED!
-  - Wow a real robot. You remind me of what's-his-name from that one movie where
-    a robot cleans the Earth after...nevermind..
-  - Don't you just love the smell of pollution in the morning?
-  text: {fileID: 47526323115883888, guid: be4a024f68e63734cac520b91df7eb3e, type: 3}
-  textParent: {fileID: 6691526649921696301, guid: be4a024f68e63734cac520b91df7eb3e, type: 3}
+--- !u!65 &7631720337427465099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628545954237388218}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 2, z: 5}
+  m_Center: {x: 0, y: 1.02, z: 0}
 --- !u!1 &3737968961407881917
 GameObject:
   m_ObjectHideFlags: 0

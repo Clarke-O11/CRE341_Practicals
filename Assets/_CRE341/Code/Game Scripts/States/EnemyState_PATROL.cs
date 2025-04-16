@@ -15,7 +15,7 @@ public class EnemyState_PATROL :  IEnemyState
         aiBase.agent.speed = 4;
         //aiBase.agent.Resume();
         aiBase.agent.isStopped = false;
-        aiBase.textParent.SetActive(false);
+        //aiBase.textParent.SetActive(false);
     }
     public void Update(AIBase aiBase)
     {
@@ -23,13 +23,13 @@ public class EnemyState_PATROL :  IEnemyState
         Debug.Log("AIPatroling");
         aiBase.PatrolPoints();
         //aiBase.textParent.SetActive(false);
-        aiBase.text.enabled = true;
+        //aiBase.text.enabled = true;
 
         aiBase.distanceToPlayer = Vector3.Distance(aiBase.player.transform.position, aiBase.transform.position);
         if (aiBase.distanceToPlayer <= 5f)
         {
             aiBase.SetState(new EnemyState_Idle());
-            aiBase.Dialogue();
+            //aiBase.Dialogue();
         }
         
         aiBase.Dropping();

@@ -64,13 +64,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -6067185528594298527, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: cb9fb19d8b4defd4cb8e49ff0e350479, type: 2}
+    - target: {fileID: 46697956382119959, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
       propertyPath: m_Name
       value: BananaPeel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78,40 +94,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -796704347626465317}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
-      insertIndex: -1
       addedObject: {fileID: -3799140409100400940}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 41979515940482764}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1969400546882625524}
   m_SourcePrefab: {fileID: 100100000, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
 --- !u!1 &8533159227742208775 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d362074915f41245a83561b0eb5da62, type: 3}
   m_PrefabInstance: {fileID: 8839078199538679382}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &-796704347626465317
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8533159227742208775}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-3799140409100400940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +153,24 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &1969400546882625524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533159227742208775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.47, y: 0.2, z: 0.3}
+  m_Center: {x: 0, y: 0.09, z: -0.01}
