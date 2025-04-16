@@ -5885,6 +5885,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 176316163}
     m_Modifications:
+    - target: {fileID: 1539074425403879257, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 137305d6d02d1c748a8499d24e568294, type: 3}
+    - target: {fileID: 1539074425403879257, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539074425403879257, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539074425403879257, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6668776742753575608, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
       propertyPath: m_Name
       value: LitterIcon
@@ -5927,15 +5943,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7324039318778282211, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.35
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7324039318778282211, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.35
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7324039318778282211, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.35
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7324039318778282211, guid: 5d5054f267ae644409372fc5f49d7d54, type: 3}
       propertyPath: m_LocalPosition.x
