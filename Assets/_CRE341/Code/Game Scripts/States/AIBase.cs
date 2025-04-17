@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
-using UnityEditor.Experimental.GraphView;
-using Unity.VisualScripting;
 using Unity.Cinemachine;
 using TMPro;
 
@@ -183,6 +179,7 @@ public class AIBase : MonoBehaviour
         yield return new WaitForSeconds(randomTimer);
         spawning = false;
     }
+
     //public void Dialogue() 
     //{
     //    text.enabled = true;

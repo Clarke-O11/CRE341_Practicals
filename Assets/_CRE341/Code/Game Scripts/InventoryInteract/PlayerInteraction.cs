@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         CheckInteraction();
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && inventory.inventoryFull == false)
         {
             currentInteractable.Interact();
             inventory.AddItem();
